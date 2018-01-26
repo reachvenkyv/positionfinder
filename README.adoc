@@ -20,6 +20,10 @@ Cars are placed on a 15 by 15 grid at particular co-ordinates heading north, and
 
 This guide walks you through the process of getting the command with starting position & movements from the user and calculate final position with Spring :
 
+== Make the application executable
+
+Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated here creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+
 == Standalone application executable
 
 - Download the project
@@ -44,11 +48,16 @@ This guide walks you through the process of getting the command with starting po
 
 == What you'll need
 
-Java 1.8
+ - Java 1.8
+ - Maven
 
-== Make the application executable
-
-Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated here creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+== Technologies used
+ 
+ - Spring Boot
+ - Spring MVC
+ - Spring Rest
+ - Thymeleaf
+ - Angular JS
 
 == References used
 
