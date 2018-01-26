@@ -20,20 +20,26 @@ Cars are placed on a 15 by 15 grid at particular co-ordinates heading north, and
 
 This guide walks you through the process of getting the command with starting position & movements from the user and calculate final position with Spring :
 
-[input]
--------
+== Standalone application executable
+
 - Download the project
 - Import the project by selecting pom.xml and enable checkbox to automatically download the dependancies.
 - Navigate to Application.java and run
 - Access http://localhost:8080/index.
 - Enter the command format - (0-9,0-5:FPR)) : 5,5:RFLFRFLF
 - On submit , it invokes the REST webservice - http://localhost:8080/position?input="5,5:RFLFRFLF":
--------
+- Final Position : 7,7
 
-[output]
---------
-Final Position : 7,7
---------
+
+== Build an executable JAR
+
+- Download the project
+- Run the application using ./mvnw spring-boot:run
+- or Build the JAR file with ./mvnw clean package and run the JAR file - java -jar target/positionfinder-1.0-SNAPSHOT.jar
+- Access http://localhost:8080/index.
+- Enter the command format - (0-9,0-5:FPR)) : 5,5:RFLFRFLF
+- On submit , it invokes the REST webservice - http://localhost:8080/position?input="5,5:RFLFRFLF":
+- Final Position : 7,7
 
 
 == What you'll need
