@@ -1,0 +1,55 @@
+---
+tags: [rest,mvc,angular]
+projects: [spring-framework]
+experimental: To calculate final position based on the command - Left, Right & Forward
+---
+
+:spring_version: current
+:toc:
+:project_id: gs-rest-service
+:spring_version: current
+:spring_boot_version: 1.5.9.RELEASE
+:icons: font
+:source-highlighter: prettify
+
+
+
+== What you'll build
+
+Cars are placed on a 15 by 15 grid at particular co-ordinates heading north, and the simple commands Left, right and forward are transmitted to them. The commands must be executed and the final position calculated.
+
+This guide walks you through the process of getting the command with starting position & movements from the user and calculate final position with Spring :
+
+[input]
+-------
+Page to get the command with starting position & movements - http://localhost:8080/index
+
+Command (format - (0-9,0-5:FPR)) : 5,5:RFLFRFLF
+
+On submit , it invokes the REST webservice - http://localhost:8080/position?input="5,5:RFLFRFLF":
+-------
+
+
+[output]
+--------
+Final Position : 7,7
+--------
+
+
+== What you'll need
+
+Java 1.8
+
+== Make the application executable
+
+Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated here creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+
+== References used
+
+- Spring Boot guides
+    * https://spring.io/guides/gs/rest-service/
+    * https://spring.io/guides/gs/serving-web-content/
+    * https://spring.io/guides/gs/consuming-rest-angularjs/
+
+- Angular guides
+    * https://docs.angularjs.org/api/ng/directive/ngSubmit
