@@ -22,13 +22,13 @@ This guide walks you through the process of getting the command with starting po
 
 [input]
 -------
-Page to get the command with starting position & movements - http://localhost:8080/index
-
-Command (format - (0-9,0-5:FPR)) : 5,5:RFLFRFLF
-
-On submit , it invokes the REST webservice - http://localhost:8080/position?input="5,5:RFLFRFLF":
+- Download the project
+- Import the project by selecting pom.xml and enable checkbox to automatically download the dependancies.
+- Navigate to Application.java and run
+- Access http://localhost:8080/index.
+- Enter the command format - (0-9,0-5:FPR)) : 5,5:RFLFRFLF
+- On submit , it invokes the REST webservice - http://localhost:8080/position?input="5,5:RFLFRFLF":
 -------
-
 
 [output]
 --------
