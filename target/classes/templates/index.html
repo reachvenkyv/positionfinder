@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Position Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script>
+  angular.module('PositionModule', [])
+    .controller('PositionController', function($scope,$http) {
+        $scope.submit = function() {
+            $http.get('http://localhost:8080/position?input='+$scope.text).
+            then(function(response) {
+                $scope.output = response.data.output;
+            });
+        };
+    });
+</script>
+</head>
+
+<body ng-app="PositionModule">
+<h1>Remote controlled cars - Position Finder</h1>
+<h2>Cars are placed on a 15 by 15 grid at particular co-ordinates heading north, and the simple commands Left, right and forward are transmitted to them.</h2>
+<h3>Transmit the command to calculate final position.</h3>
+<form ng-submit="submit()" ng-controller="PositionController">
+    Command (format - (0-9,0-5:FPR)) :
+    <input type="text" ng-model="text" name="text" />
+    <input type="submit" id="submit" value="Submit" />
+    <pre><b>{{output}}</b></pre>
+</form>
+</body>
+</html>
